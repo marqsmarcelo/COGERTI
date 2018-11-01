@@ -77,7 +77,6 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
@@ -184,23 +183,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811010113086_InitialModel.cs" />
-    <Compile Include="Migrations\201811010113086_InitialModel.Designer.cs">
-      <DependentUpon>201811010113086_InitialModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811010329053_Notebook-Funcionario-CC-Planta-Table.cs" />
-    <Compile Include="Migrations\201811010329053_Notebook-Funcionario-CC-Planta-Table.Designer.cs">
-      <DependentUpon>201811010329053_Notebook-Funcionario-CC-Planta-Table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AparelhoCelular.cs">
       <DependentUpon>RecursosDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\AssociacaoRecurso.cs">
       <DependentUpon>RecursosDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CentroCusto.cs" />
     <Compile Include="Models\CentroDeCusto.cs">
       <DependentUpon>RecursosDB.tt</DependentUpon>
     </Compile>
@@ -231,8 +219,6 @@
     <Compile Include="Models\LocalSite.cs">
       <DependentUpon>RecursosDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Notebook.cs" />
-    <Compile Include="Models\OwnerDevice.cs" />
     <Compile Include="Models\Propriedade.cs">
       <DependentUpon>RecursosDB.tt</DependentUpon>
     </Compile>
@@ -254,8 +240,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosDB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\StatusCentroCusto.cs" />
-    <Compile Include="Models\StatusDevice.cs" />
     <Compile Include="Models\StatusEquipamento.cs">
       <DependentUpon>RecursosDB.tt</DependentUpon>
     </Compile>
@@ -353,14 +337,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811010113086_InitialModel.resx">
-      <DependentUpon>201811010113086_InitialModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811010329053_Notebook-Funcionario-CC-Planta-Table.resx">
-      <DependentUpon>201811010329053_Notebook-Funcionario-CC-Planta-Table.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

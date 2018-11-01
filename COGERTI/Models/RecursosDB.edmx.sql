@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 11/01/2018 12:27:38
+-- Date Created: 11/01/2018 13:46:06
 -- Generated from EDMX file: C:\Users\marce\source\repos\COGERTI\COGERTI\Models\RecursosDB.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,143 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_CentroDeCustoFuncionario]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[CentroDeCustoSet] DROP CONSTRAINT [FK_CentroDeCustoFuncionario];
+GO
+IF OBJECT_ID(N'[dbo].[FK_FuncionarioLocalSite]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[FuncionarioSet] DROP CONSTRAINT [FK_FuncionarioLocalSite];
+GO
+IF OBJECT_ID(N'[dbo].[FK_LocalSiteRecurso]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RecursoSet] DROP CONSTRAINT [FK_LocalSiteRecurso];
+GO
+IF OBJECT_ID(N'[dbo].[FK_StatusFuncionarioFuncionario]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[FuncionarioSet] DROP CONSTRAINT [FK_StatusFuncionarioFuncionario];
+GO
+IF OBJECT_ID(N'[dbo].[FK_FuncionarioAssociacaoRecurso]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[AssociacaoRecursoSet] DROP CONSTRAINT [FK_FuncionarioAssociacaoRecurso];
+GO
+IF OBJECT_ID(N'[dbo].[FK_RecursoAssociacaoRecurso]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[AssociacaoRecursoSet] DROP CONSTRAINT [FK_RecursoAssociacaoRecurso];
+GO
+IF OBJECT_ID(N'[dbo].[FK_StatusEquipamentoEquipamento]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RecursoSet_Equipamento] DROP CONSTRAINT [FK_StatusEquipamentoEquipamento];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ComputadorTipoComputador]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RecursoSet_Computador] DROP CONSTRAINT [FK_ComputadorTipoComputador];
+GO
+IF OBJECT_ID(N'[dbo].[FK_EquipamentoPropriedade]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RecursoSet_Equipamento] DROP CONSTRAINT [FK_EquipamentoPropriedade];
+GO
+IF OBJECT_ID(N'[dbo].[FK_AparelhoCelularTipoAparelhoCelular]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RecursoSet_AparelhoCelular] DROP CONSTRAINT [FK_AparelhoCelularTipoAparelhoCelular];
+GO
+IF OBJECT_ID(N'[dbo].[FK_LinhaMovelCodigosDDD]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RecursoSet_LinhaMovel] DROP CONSTRAINT [FK_LinhaMovelCodigosDDD];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TipoLinhaLinhaMovel]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RecursoSet_LinhaMovel] DROP CONSTRAINT [FK_TipoLinhaLinhaMovel];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TipoPlanoMovelLinhaMovel]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RecursoSet_LinhaMovel] DROP CONSTRAINT [FK_TipoPlanoMovelLinhaMovel];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CentroDeCustoFuncionario1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[CentroDeCustoSet] DROP CONSTRAINT [FK_CentroDeCustoFuncionario1];
+GO
+IF OBJECT_ID(N'[dbo].[FK_FuncionarioCentroDeCusto]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[FuncionarioSet] DROP CONSTRAINT [FK_FuncionarioCentroDeCusto];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Equipamento_inherits_Recurso]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RecursoSet_Equipamento] DROP CONSTRAINT [FK_Equipamento_inherits_Recurso];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Computador_inherits_Equipamento]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RecursoSet_Computador] DROP CONSTRAINT [FK_Computador_inherits_Equipamento];
+GO
+IF OBJECT_ID(N'[dbo].[FK_AparelhoCelular_inherits_Equipamento]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RecursoSet_AparelhoCelular] DROP CONSTRAINT [FK_AparelhoCelular_inherits_Equipamento];
+GO
+IF OBJECT_ID(N'[dbo].[FK_LinhaMovel_inherits_Recurso]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RecursoSet_LinhaMovel] DROP CONSTRAINT [FK_LinhaMovel_inherits_Recurso];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UsuarioVpn_inherits_Recurso]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RecursoSet_UsuarioVpn] DROP CONSTRAINT [FK_UsuarioVpn_inherits_Recurso];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Compra_inherits_Propriedade]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PropriedadeSet_Compra] DROP CONSTRAINT [FK_Compra_inherits_Propriedade];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Leasing_inherits_Propriedade]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PropriedadeSet_Leasing] DROP CONSTRAINT [FK_Leasing_inherits_Propriedade];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Comodato_inherits_Propriedade]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PropriedadeSet_Comodato] DROP CONSTRAINT [FK_Comodato_inherits_Propriedade];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FuncionarioSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FuncionarioSet];
+GO
+IF OBJECT_ID(N'[dbo].[CentroDeCustoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CentroDeCustoSet];
+GO
+IF OBJECT_ID(N'[dbo].[RecursoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RecursoSet];
+GO
+IF OBJECT_ID(N'[dbo].[LocalSiteSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[LocalSiteSet];
+GO
+IF OBJECT_ID(N'[dbo].[StatusFuncionarioSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[StatusFuncionarioSet];
+GO
+IF OBJECT_ID(N'[dbo].[AssociacaoRecursoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[AssociacaoRecursoSet];
+GO
+IF OBJECT_ID(N'[dbo].[StatusEquipamentoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[StatusEquipamentoSet];
+GO
+IF OBJECT_ID(N'[dbo].[TipoComputadorSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TipoComputadorSet];
+GO
+IF OBJECT_ID(N'[dbo].[PropriedadeSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PropriedadeSet];
+GO
+IF OBJECT_ID(N'[dbo].[TipoAparelhoCelularSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TipoAparelhoCelularSet];
+GO
+IF OBJECT_ID(N'[dbo].[CodigosDDDSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CodigosDDDSet];
+GO
+IF OBJECT_ID(N'[dbo].[TipoLinhaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TipoLinhaSet];
+GO
+IF OBJECT_ID(N'[dbo].[TipoPlanoMovelSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TipoPlanoMovelSet];
+GO
+IF OBJECT_ID(N'[dbo].[RecursoSet_Equipamento]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RecursoSet_Equipamento];
+GO
+IF OBJECT_ID(N'[dbo].[RecursoSet_Computador]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RecursoSet_Computador];
+GO
+IF OBJECT_ID(N'[dbo].[RecursoSet_AparelhoCelular]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RecursoSet_AparelhoCelular];
+GO
+IF OBJECT_ID(N'[dbo].[RecursoSet_LinhaMovel]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RecursoSet_LinhaMovel];
+GO
+IF OBJECT_ID(N'[dbo].[RecursoSet_UsuarioVpn]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RecursoSet_UsuarioVpn];
+GO
+IF OBJECT_ID(N'[dbo].[PropriedadeSet_Compra]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PropriedadeSet_Compra];
+GO
+IF OBJECT_ID(N'[dbo].[PropriedadeSet_Leasing]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PropriedadeSet_Leasing];
+GO
+IF OBJECT_ID(N'[dbo].[PropriedadeSet_Comodato]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PropriedadeSet_Comodato];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
