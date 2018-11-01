@@ -12,18 +12,15 @@ namespace COGERTI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class StatusFuncionario
+    public partial class AssociacaoRecurso
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public StatusFuncionario()
-        {
-            this.Funcionario = new HashSet<Funcionario>();
-        }
-    
         public int Id { get; set; }
-        public string Descricao { get; set; }
+        public System.DateTime DataAssociacao { get; set; }
+        public Nullable<System.DateTime> DataLiberacao { get; set; }
+        public string MotivoLiberacao { get; set; }
+        public string TermoResponsabilidade { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Funcionario> Funcionario { get; set; }
+        public virtual Funcionario Funcionario { get; set; }
+        public virtual Recurso Recurso { get; set; }
     }
 }

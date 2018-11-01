@@ -12,29 +12,18 @@ namespace COGERTI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Funcionario
+    public abstract partial class Recurso
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Funcionario()
+        public Recurso()
         {
-            this.CoordenadorCC = new HashSet<CentroDeCusto>();
             this.AssociacaoRecurso = new HashSet<AssociacaoRecurso>();
-            this.GestorCC = new HashSet<CentroDeCusto>();
         }
     
-        public int UPI { get; set; }
-        public string Nome { get; set; }
-        public string Sobrenome { get; set; }
-        public string UsuarioGad { get; set; }
+        public int Id { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CentroDeCusto> CoordenadorCC { get; set; }
         public virtual LocalSite LocalSite { get; set; }
-        public virtual StatusFuncionario StatusFuncionario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AssociacaoRecurso> AssociacaoRecurso { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CentroDeCusto> GestorCC { get; set; }
-        public virtual CentroDeCusto CentroDeCusto { get; set; }
     }
 }

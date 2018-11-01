@@ -80,6 +80,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -191,15 +193,90 @@
       <DependentUpon>201811010329053_Notebook-Funcionario-CC-Planta-Table.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AparelhoCelular.cs">
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\AssociacaoRecurso.cs">
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\CentroCusto.cs" />
-    <Compile Include="Models\Funcionario.cs" />
-    <Compile Include="Models\LocalSite.cs" />
+    <Compile Include="Models\CentroDeCusto.cs">
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CodigosDDD.cs">
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Comodato.cs">
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Compra.cs">
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Computador.cs">
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Equipamento.cs">
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Funcionario.cs">
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Leasing.cs">
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LinhaMovel.cs">
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LocalSite.cs">
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Notebook.cs" />
     <Compile Include="Models\OwnerDevice.cs" />
+    <Compile Include="Models\Propriedade.cs">
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Recurso.cs">
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecursosDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecursosDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecursosDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosDB.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\StatusCentroCusto.cs" />
     <Compile Include="Models\StatusDevice.cs" />
-    <Compile Include="Models\StatusFuncionario.cs" />
+    <Compile Include="Models\StatusEquipamento.cs">
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StatusFuncionario.cs">
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TipoAparelhoCelular.cs">
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TipoComputador.cs">
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TipoLinha.cs">
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TipoPlanoMovel.cs">
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsuarioVpn.cs">
+      <DependentUpon>RecursosDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -212,10 +289,28 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\RecursosDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RecursosDB.Context.cs</LastGenOutput>
+      <DependentUpon>RecursosDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\RecursosDB.edmx.sql" />
+    <Content Include="Models\RecursosDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RecursosDB.cs</LastGenOutput>
+      <DependentUpon>RecursosDB.edmx</DependentUpon>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="Models\RecursosDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RecursosDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\RecursosDB.edmx.diagram">
+      <DependentUpon>RecursosDB.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -266,6 +361,9 @@
     <EmbeddedResource Include="Migrations\201811010329053_Notebook-Funcionario-CC-Planta-Table.resx">
       <DependentUpon>201811010329053_Notebook-Funcionario-CC-Planta-Table.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

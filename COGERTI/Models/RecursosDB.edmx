@@ -1,0 +1,1219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RecursosDB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="RecursosDBStoreContainer">
+    <EntitySet Name="FuncionarioSet" EntityType="RecursosDB.Store.FuncionarioSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CentroDeCustoSet" EntityType="RecursosDB.Store.CentroDeCustoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RecursoSet" EntityType="RecursosDB.Store.RecursoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LocalSiteSet" EntityType="RecursosDB.Store.LocalSiteSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StatusFuncionarioSet" EntityType="RecursosDB.Store.StatusFuncionarioSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AssociacaoRecursoSet" EntityType="RecursosDB.Store.AssociacaoRecursoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StatusEquipamentoSet" EntityType="RecursosDB.Store.StatusEquipamentoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoComputadorSet" EntityType="RecursosDB.Store.TipoComputadorSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PropriedadeSet" EntityType="RecursosDB.Store.PropriedadeSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoAparelhoCelularSet" EntityType="RecursosDB.Store.TipoAparelhoCelularSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CodigosDDDSet" EntityType="RecursosDB.Store.CodigosDDDSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoLinhaSet" EntityType="RecursosDB.Store.TipoLinhaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoPlanoMovelSet" EntityType="RecursosDB.Store.TipoPlanoMovelSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RecursoSet_Equipamento" EntityType="RecursosDB.Store.RecursoSet_Equipamento" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RecursoSet_Computador" EntityType="RecursosDB.Store.RecursoSet_Computador" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RecursoSet_AparelhoCelular" EntityType="RecursosDB.Store.RecursoSet_AparelhoCelular" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RecursoSet_LinhaMovel" EntityType="RecursosDB.Store.RecursoSet_LinhaMovel" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RecursoSet_UsuarioVpn" EntityType="RecursosDB.Store.RecursoSet_UsuarioVpn" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PropriedadeSet_Compra" EntityType="RecursosDB.Store.PropriedadeSet_Compra" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PropriedadeSet_Leasing" EntityType="RecursosDB.Store.PropriedadeSet_Leasing" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PropriedadeSet_Comodato" EntityType="RecursosDB.Store.PropriedadeSet_Comodato" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="CentroDeCustoFuncionario" Association="RecursosDB.Store.CentroDeCustoFuncionario">
+      <End Role="CentroDeCusto" EntitySet="CentroDeCustoSet" />
+      <End Role="Funcionario" EntitySet="FuncionarioSet" />
+    </AssociationSet>
+    <AssociationSet Name="FuncionarioLocalSite" Association="RecursosDB.Store.FuncionarioLocalSite">
+      <End Role="Funcionario" EntitySet="FuncionarioSet" />
+      <End Role="LocalSite" EntitySet="LocalSiteSet" />
+    </AssociationSet>
+    <AssociationSet Name="LocalSiteRecurso" Association="RecursosDB.Store.LocalSiteRecurso">
+      <End Role="LocalSite" EntitySet="LocalSiteSet" />
+      <End Role="Recurso" EntitySet="RecursoSet" />
+    </AssociationSet>
+    <AssociationSet Name="StatusFuncionarioFuncionario" Association="RecursosDB.Store.StatusFuncionarioFuncionario">
+      <End Role="StatusFuncionario" EntitySet="StatusFuncionarioSet" />
+      <End Role="Funcionario" EntitySet="FuncionarioSet" />
+    </AssociationSet>
+    <AssociationSet Name="FuncionarioAssociacaoRecurso" Association="RecursosDB.Store.FuncionarioAssociacaoRecurso">
+      <End Role="Funcionario" EntitySet="FuncionarioSet" />
+      <End Role="AssociacaoRecurso" EntitySet="AssociacaoRecursoSet" />
+    </AssociationSet>
+    <AssociationSet Name="RecursoAssociacaoRecurso" Association="RecursosDB.Store.RecursoAssociacaoRecurso">
+      <End Role="Recurso" EntitySet="RecursoSet" />
+      <End Role="AssociacaoRecurso" EntitySet="AssociacaoRecursoSet" />
+    </AssociationSet>
+    <AssociationSet Name="StatusEquipamentoEquipamento" Association="RecursosDB.Store.StatusEquipamentoEquipamento">
+      <End Role="StatusEquipamento" EntitySet="StatusEquipamentoSet" />
+      <End Role="Equipamento" EntitySet="RecursoSet_Equipamento" />
+    </AssociationSet>
+    <AssociationSet Name="ComputadorTipoComputador" Association="RecursosDB.Store.ComputadorTipoComputador">
+      <End Role="Computador" EntitySet="RecursoSet_Computador" />
+      <End Role="TipoComputador" EntitySet="TipoComputadorSet" />
+    </AssociationSet>
+    <AssociationSet Name="EquipamentoPropriedade" Association="RecursosDB.Store.EquipamentoPropriedade">
+      <End Role="Equipamento" EntitySet="RecursoSet_Equipamento" />
+      <End Role="Propriedade" EntitySet="PropriedadeSet" />
+    </AssociationSet>
+    <AssociationSet Name="AparelhoCelularTipoAparelhoCelular" Association="RecursosDB.Store.AparelhoCelularTipoAparelhoCelular">
+      <End Role="AparelhoCelular" EntitySet="RecursoSet_AparelhoCelular" />
+      <End Role="TipoAparelhoCelular" EntitySet="TipoAparelhoCelularSet" />
+    </AssociationSet>
+    <AssociationSet Name="LinhaMovelCodigosDDD" Association="RecursosDB.Store.LinhaMovelCodigosDDD">
+      <End Role="LinhaMovel" EntitySet="RecursoSet_LinhaMovel" />
+      <End Role="CodigosDDD" EntitySet="CodigosDDDSet" />
+    </AssociationSet>
+    <AssociationSet Name="TipoLinhaLinhaMovel" Association="RecursosDB.Store.TipoLinhaLinhaMovel">
+      <End Role="TipoLinha" EntitySet="TipoLinhaSet" />
+      <End Role="LinhaMovel" EntitySet="RecursoSet_LinhaMovel" />
+    </AssociationSet>
+    <AssociationSet Name="TipoPlanoMovelLinhaMovel" Association="RecursosDB.Store.TipoPlanoMovelLinhaMovel">
+      <End Role="TipoPlanoMovel" EntitySet="TipoPlanoMovelSet" />
+      <End Role="LinhaMovel" EntitySet="RecursoSet_LinhaMovel" />
+    </AssociationSet>
+    <AssociationSet Name="CentroDeCustoFuncionario1" Association="RecursosDB.Store.CentroDeCustoFuncionario1">
+      <End Role="CentroDeCusto" EntitySet="CentroDeCustoSet" />
+      <End Role="Funcionario" EntitySet="FuncionarioSet" />
+    </AssociationSet>
+    <AssociationSet Name="FuncionarioCentroDeCusto" Association="RecursosDB.Store.FuncionarioCentroDeCusto">
+      <End Role="Funcionario" EntitySet="FuncionarioSet" />
+      <End Role="CentroDeCusto" EntitySet="CentroDeCustoSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipamento_inherits_Recurso" Association="RecursosDB.Store.FK_Equipamento_inherits_Recurso">
+      <End Role="Recurso" EntitySet="RecursoSet" />
+      <End Role="Equipamento" EntitySet="RecursoSet_Equipamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Computador_inherits_Equipamento" Association="RecursosDB.Store.FK_Computador_inherits_Equipamento">
+      <End Role="Equipamento" EntitySet="RecursoSet_Equipamento" />
+      <End Role="Computador" EntitySet="RecursoSet_Computador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AparelhoCelular_inherits_Equipamento" Association="RecursosDB.Store.FK_AparelhoCelular_inherits_Equipamento">
+      <End Role="Equipamento" EntitySet="RecursoSet_Equipamento" />
+      <End Role="AparelhoCelular" EntitySet="RecursoSet_AparelhoCelular" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LinhaMovel_inherits_Recurso" Association="RecursosDB.Store.FK_LinhaMovel_inherits_Recurso">
+      <End Role="Recurso" EntitySet="RecursoSet" />
+      <End Role="LinhaMovel" EntitySet="RecursoSet_LinhaMovel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsuarioVpn_inherits_Recurso" Association="RecursosDB.Store.FK_UsuarioVpn_inherits_Recurso">
+      <End Role="Recurso" EntitySet="RecursoSet" />
+      <End Role="UsuarioVpn" EntitySet="RecursoSet_UsuarioVpn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Compra_inherits_Propriedade" Association="RecursosDB.Store.FK_Compra_inherits_Propriedade">
+      <End Role="Propriedade" EntitySet="PropriedadeSet" />
+      <End Role="Compra" EntitySet="PropriedadeSet_Compra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Leasing_inherits_Propriedade" Association="RecursosDB.Store.FK_Leasing_inherits_Propriedade">
+      <End Role="Propriedade" EntitySet="PropriedadeSet" />
+      <End Role="Leasing" EntitySet="PropriedadeSet_Leasing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comodato_inherits_Propriedade" Association="RecursosDB.Store.FK_Comodato_inherits_Propriedade">
+      <End Role="Propriedade" EntitySet="PropriedadeSet" />
+      <End Role="Comodato" EntitySet="PropriedadeSet_Comodato" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="FuncionarioSet">
+    <Key>
+      <PropertyRef Name="UPI" />
+    </Key>
+    <Property Name="UPI" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Sobrenome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UsuarioGad" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="LocalSite_Id" Type="int" Nullable="false" />
+    <Property Name="StatusFuncionario_Id" Type="int" Nullable="false" />
+    <Property Name="CentroDeCusto_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CentroDeCustoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GestorUPI" Type="int" Nullable="true" />
+    <Property Name="CoordenadorUPI" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="RecursoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocalSite_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LocalSiteSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Sigla" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UF" Type="nchar" Nullable="false" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="StatusFuncionarioSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AssociacaoRecursoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DataAssociacao" Type="datetime" Nullable="false" />
+    <Property Name="DataLiberacao" Type="datetime" Nullable="true" />
+    <Property Name="MotivoLiberacao" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TermoResponsabilidade" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Funcionario_UPI" Type="int" Nullable="false" />
+    <Property Name="Recurso_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatusEquipamentoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoComputadorSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropriedadeSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoAparelhoCelularSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CodigosDDDSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodigoDDD" Type="nchar" Nullable="false" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="TipoLinhaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoPlanoMovelSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RecursoSet_Equipamento">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="SerialNo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Patrimonio" Type="float" Nullable="true" />
+    <Property Name="NotaFiscalNo" Type="float" Nullable="true" />
+    <Property Name="DataFabricacao" Type="datetime" Nullable="true" />
+    <Property Name="StatusEquipamentoId" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Marca" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Modelo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="StatusEquipamento_Id" Type="int" Nullable="false" />
+    <Property Name="Propriedade_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RecursoSet_Computador">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="TipoComputador_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RecursoSet_AparelhoCelular">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="IMEI1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IMEI2" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="TipoAparelhoCelular_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RecursoSet_LinhaMovel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="LinhaNo" Type="nvarchar" Nullable="false" MaxLength="9" />
+    <Property Name="ChipId" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CodigosDDD_Id" Type="int" Nullable="false" />
+    <Property Name="TipoLinha_Id" Type="int" Nullable="false" />
+    <Property Name="TipoPlanoMovel_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RecursoSet_UsuarioVpn">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Usuario" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropriedadeSet_Compra">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="DataCompra" Type="datetime" Nullable="true" />
+    <Property Name="PedidoSapNo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DataTerminoGarantia" Type="datetime" Nullable="true" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropriedadeSet_Leasing">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="DataRecebimento" Type="datetime" Nullable="true" />
+    <Property Name="ContratoNo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropriedadeSet_Comodato">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="DataRecebimento" Type="datetime" Nullable="true" />
+    <Property Name="ContratoNo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DataTerminoGarantia" Type="datetime" Nullable="true" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="CentroDeCustoFuncionario">
+    <End Role="CentroDeCusto" Type="RecursosDB.Store.CentroDeCustoSet" Multiplicity="*" />
+    <End Role="Funcionario" Type="RecursosDB.Store.FuncionarioSet" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionario">
+        <PropertyRef Name="UPI" />
+      </Principal>
+      <Dependent Role="CentroDeCusto">
+        <PropertyRef Name="CoordenadorUPI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FuncionarioLocalSite">
+    <End Role="Funcionario" Type="RecursosDB.Store.FuncionarioSet" Multiplicity="*" />
+    <End Role="LocalSite" Type="RecursosDB.Store.LocalSiteSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="LocalSite">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Funcionario">
+        <PropertyRef Name="LocalSite_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LocalSiteRecurso">
+    <End Role="LocalSite" Type="RecursosDB.Store.LocalSiteSet" Multiplicity="1" />
+    <End Role="Recurso" Type="RecursosDB.Store.RecursoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LocalSite">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Recurso">
+        <PropertyRef Name="LocalSite_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StatusFuncionarioFuncionario">
+    <End Role="StatusFuncionario" Type="RecursosDB.Store.StatusFuncionarioSet" Multiplicity="1" />
+    <End Role="Funcionario" Type="RecursosDB.Store.FuncionarioSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusFuncionario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Funcionario">
+        <PropertyRef Name="StatusFuncionario_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FuncionarioAssociacaoRecurso">
+    <End Role="Funcionario" Type="RecursosDB.Store.FuncionarioSet" Multiplicity="1" />
+    <End Role="AssociacaoRecurso" Type="RecursosDB.Store.AssociacaoRecursoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionario">
+        <PropertyRef Name="UPI" />
+      </Principal>
+      <Dependent Role="AssociacaoRecurso">
+        <PropertyRef Name="Funcionario_UPI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RecursoAssociacaoRecurso">
+    <End Role="Recurso" Type="RecursosDB.Store.RecursoSet" Multiplicity="1" />
+    <End Role="AssociacaoRecurso" Type="RecursosDB.Store.AssociacaoRecursoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recurso">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssociacaoRecurso">
+        <PropertyRef Name="Recurso_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StatusEquipamentoEquipamento">
+    <End Role="StatusEquipamento" Type="RecursosDB.Store.StatusEquipamentoSet" Multiplicity="1" />
+    <End Role="Equipamento" Type="RecursosDB.Store.RecursoSet_Equipamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusEquipamento">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Equipamento">
+        <PropertyRef Name="StatusEquipamento_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ComputadorTipoComputador">
+    <End Role="Computador" Type="RecursosDB.Store.RecursoSet_Computador" Multiplicity="*" />
+    <End Role="TipoComputador" Type="RecursosDB.Store.TipoComputadorSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="TipoComputador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Computador">
+        <PropertyRef Name="TipoComputador_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EquipamentoPropriedade">
+    <End Role="Equipamento" Type="RecursosDB.Store.RecursoSet_Equipamento" Multiplicity="*" />
+    <End Role="Propriedade" Type="RecursosDB.Store.PropriedadeSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Propriedade">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Equipamento">
+        <PropertyRef Name="Propriedade_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AparelhoCelularTipoAparelhoCelular">
+    <End Role="AparelhoCelular" Type="RecursosDB.Store.RecursoSet_AparelhoCelular" Multiplicity="*" />
+    <End Role="TipoAparelhoCelular" Type="RecursosDB.Store.TipoAparelhoCelularSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="TipoAparelhoCelular">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AparelhoCelular">
+        <PropertyRef Name="TipoAparelhoCelular_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LinhaMovelCodigosDDD">
+    <End Role="LinhaMovel" Type="RecursosDB.Store.RecursoSet_LinhaMovel" Multiplicity="*" />
+    <End Role="CodigosDDD" Type="RecursosDB.Store.CodigosDDDSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="CodigosDDD">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LinhaMovel">
+        <PropertyRef Name="CodigosDDD_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TipoLinhaLinhaMovel">
+    <End Role="TipoLinha" Type="RecursosDB.Store.TipoLinhaSet" Multiplicity="1" />
+    <End Role="LinhaMovel" Type="RecursosDB.Store.RecursoSet_LinhaMovel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoLinha">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LinhaMovel">
+        <PropertyRef Name="TipoLinha_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TipoPlanoMovelLinhaMovel">
+    <End Role="TipoPlanoMovel" Type="RecursosDB.Store.TipoPlanoMovelSet" Multiplicity="1" />
+    <End Role="LinhaMovel" Type="RecursosDB.Store.RecursoSet_LinhaMovel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoPlanoMovel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LinhaMovel">
+        <PropertyRef Name="TipoPlanoMovel_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CentroDeCustoFuncionario1">
+    <End Role="CentroDeCusto" Type="RecursosDB.Store.CentroDeCustoSet" Multiplicity="*" />
+    <End Role="Funcionario" Type="RecursosDB.Store.FuncionarioSet" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionario">
+        <PropertyRef Name="UPI" />
+      </Principal>
+      <Dependent Role="CentroDeCusto">
+        <PropertyRef Name="GestorUPI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FuncionarioCentroDeCusto">
+    <End Role="Funcionario" Type="RecursosDB.Store.FuncionarioSet" Multiplicity="*" />
+    <End Role="CentroDeCusto" Type="RecursosDB.Store.CentroDeCustoSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="CentroDeCusto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Funcionario">
+        <PropertyRef Name="CentroDeCusto_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipamento_inherits_Recurso">
+    <End Role="Recurso" Type="RecursosDB.Store.RecursoSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Equipamento" Type="RecursosDB.Store.RecursoSet_Equipamento" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Recurso">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Equipamento">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Computador_inherits_Equipamento">
+    <End Role="Equipamento" Type="RecursosDB.Store.RecursoSet_Equipamento" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Computador" Type="RecursosDB.Store.RecursoSet_Computador" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Equipamento">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Computador">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AparelhoCelular_inherits_Equipamento">
+    <End Role="Equipamento" Type="RecursosDB.Store.RecursoSet_Equipamento" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AparelhoCelular" Type="RecursosDB.Store.RecursoSet_AparelhoCelular" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Equipamento">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AparelhoCelular">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LinhaMovel_inherits_Recurso">
+    <End Role="Recurso" Type="RecursosDB.Store.RecursoSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LinhaMovel" Type="RecursosDB.Store.RecursoSet_LinhaMovel" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Recurso">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LinhaMovel">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsuarioVpn_inherits_Recurso">
+    <End Role="Recurso" Type="RecursosDB.Store.RecursoSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UsuarioVpn" Type="RecursosDB.Store.RecursoSet_UsuarioVpn" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Recurso">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UsuarioVpn">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Compra_inherits_Propriedade">
+    <End Role="Propriedade" Type="RecursosDB.Store.PropriedadeSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Compra" Type="RecursosDB.Store.PropriedadeSet_Compra" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Propriedade">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Compra">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Leasing_inherits_Propriedade">
+    <End Role="Propriedade" Type="RecursosDB.Store.PropriedadeSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Leasing" Type="RecursosDB.Store.PropriedadeSet_Leasing" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Propriedade">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Leasing">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comodato_inherits_Propriedade">
+    <End Role="Propriedade" Type="RecursosDB.Store.PropriedadeSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Comodato" Type="RecursosDB.Store.PropriedadeSet_Comodato" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Propriedade">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comodato">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="RecursosDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="RecursosDBContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FuncionarioSet" EntityType="RecursosDB.Funcionario" />
+          <EntitySet Name="CentroDeCustoSet" EntityType="RecursosDB.CentroDeCusto" />
+          <AssociationSet Name="CentroDeCustoFuncionario" Association="RecursosDB.CentroDeCustoFuncionario">
+            <End Role="CentroDeCusto" EntitySet="CentroDeCustoSet" />
+            <End Role="Funcionario" EntitySet="FuncionarioSet" />
+          </AssociationSet>
+          <EntitySet Name="RecursoSet" EntityType="RecursosDB.Recurso" />
+          <EntitySet Name="LocalSiteSet" EntityType="RecursosDB.LocalSite" />
+          <AssociationSet Name="FuncionarioLocalSite" Association="RecursosDB.FuncionarioLocalSite">
+            <End Role="Funcionario" EntitySet="FuncionarioSet" />
+            <End Role="LocalSite" EntitySet="LocalSiteSet" />
+          </AssociationSet>
+          <AssociationSet Name="LocalSiteRecurso" Association="RecursosDB.LocalSiteRecurso">
+            <End Role="LocalSite" EntitySet="LocalSiteSet" />
+            <End Role="Recurso" EntitySet="RecursoSet" />
+          </AssociationSet>
+          <EntitySet Name="StatusFuncionarioSet" EntityType="RecursosDB.StatusFuncionario" />
+          <AssociationSet Name="StatusFuncionarioFuncionario" Association="RecursosDB.StatusFuncionarioFuncionario">
+            <End Role="StatusFuncionario" EntitySet="StatusFuncionarioSet" />
+            <End Role="Funcionario" EntitySet="FuncionarioSet" />
+          </AssociationSet>
+          <EntitySet Name="AssociacaoRecursoSet" EntityType="RecursosDB.AssociacaoRecurso" />
+          <AssociationSet Name="FuncionarioAssociacaoRecurso" Association="RecursosDB.FuncionarioAssociacaoRecurso">
+            <End Role="Funcionario" EntitySet="FuncionarioSet" />
+            <End Role="AssociacaoRecurso" EntitySet="AssociacaoRecursoSet" />
+          </AssociationSet>
+          <AssociationSet Name="RecursoAssociacaoRecurso" Association="RecursosDB.RecursoAssociacaoRecurso">
+            <End Role="Recurso" EntitySet="RecursoSet" />
+            <End Role="AssociacaoRecurso" EntitySet="AssociacaoRecursoSet" />
+          </AssociationSet>
+          <EntitySet Name="StatusEquipamentoSet" EntityType="RecursosDB.StatusEquipamento" />
+          <AssociationSet Name="StatusEquipamentoEquipamento" Association="RecursosDB.StatusEquipamentoEquipamento">
+            <End Role="StatusEquipamento" EntitySet="StatusEquipamentoSet" />
+            <End Role="Equipamento" EntitySet="RecursoSet" />
+          </AssociationSet>
+          <EntitySet Name="TipoComputadorSet" EntityType="RecursosDB.TipoComputador" />
+          <AssociationSet Name="ComputadorTipoComputador" Association="RecursosDB.ComputadorTipoComputador">
+            <End Role="Computador" EntitySet="RecursoSet" />
+            <End Role="TipoComputador" EntitySet="TipoComputadorSet" />
+          </AssociationSet>
+          <EntitySet Name="PropriedadeSet" EntityType="RecursosDB.Propriedade" />
+          <AssociationSet Name="EquipamentoPropriedade" Association="RecursosDB.EquipamentoPropriedade">
+            <End Role="Equipamento" EntitySet="RecursoSet" />
+            <End Role="Propriedade" EntitySet="PropriedadeSet" />
+          </AssociationSet>
+          <EntitySet Name="TipoAparelhoCelularSet" EntityType="RecursosDB.TipoAparelhoCelular" />
+          <AssociationSet Name="AparelhoCelularTipoAparelhoCelular" Association="RecursosDB.AparelhoCelularTipoAparelhoCelular">
+            <End Role="AparelhoCelular" EntitySet="RecursoSet" />
+            <End Role="TipoAparelhoCelular" EntitySet="TipoAparelhoCelularSet" />
+          </AssociationSet>
+          <EntitySet Name="CodigosDDDSet" EntityType="RecursosDB.CodigosDDD" />
+          <EntitySet Name="TipoLinhaSet" EntityType="RecursosDB.TipoLinha" />
+          <EntitySet Name="TipoPlanoMovelSet" EntityType="RecursosDB.TipoPlanoMovel" />
+          <AssociationSet Name="LinhaMovelCodigosDDD" Association="RecursosDB.LinhaMovelCodigosDDD">
+            <End Role="LinhaMovel" EntitySet="RecursoSet" />
+            <End Role="CodigosDDD" EntitySet="CodigosDDDSet" />
+          </AssociationSet>
+          <AssociationSet Name="TipoLinhaLinhaMovel" Association="RecursosDB.TipoLinhaLinhaMovel">
+            <End Role="TipoLinha" EntitySet="TipoLinhaSet" />
+            <End Role="LinhaMovel" EntitySet="RecursoSet" />
+          </AssociationSet>
+          <AssociationSet Name="TipoPlanoMovelLinhaMovel" Association="RecursosDB.TipoPlanoMovelLinhaMovel">
+            <End Role="TipoPlanoMovel" EntitySet="TipoPlanoMovelSet" />
+            <End Role="LinhaMovel" EntitySet="RecursoSet" />
+          </AssociationSet>
+          <AssociationSet Name="CentroDeCustoFuncionario1" Association="RecursosDB.CentroDeCustoFuncionario1">
+            <End Role="CentroDeCusto" EntitySet="CentroDeCustoSet" />
+            <End Role="Funcionario" EntitySet="FuncionarioSet" />
+          </AssociationSet>
+          <AssociationSet Name="FuncionarioCentroDeCusto" Association="RecursosDB.FuncionarioCentroDeCusto">
+            <End Role="Funcionario" EntitySet="FuncionarioSet" />
+            <End Role="CentroDeCusto" EntitySet="CentroDeCustoSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Funcionario">
+          <Key>
+            <PropertyRef Name="UPI" />
+          </Key>
+          <Property Name="UPI" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Sobrenome" Type="String" Nullable="false" />
+          <Property Name="UsuarioGad" Type="String" Nullable="true" />
+          <NavigationProperty Name="CoordenadorCC" Relationship="RecursosDB.CentroDeCustoFuncionario" FromRole="Funcionario" ToRole="CentroDeCusto" />
+          <NavigationProperty Name="LocalSite" Relationship="RecursosDB.FuncionarioLocalSite" FromRole="Funcionario" ToRole="LocalSite" />
+          <NavigationProperty Name="StatusFuncionario" Relationship="RecursosDB.StatusFuncionarioFuncionario" FromRole="Funcionario" ToRole="StatusFuncionario" />
+          <NavigationProperty Name="AssociacaoRecurso" Relationship="RecursosDB.FuncionarioAssociacaoRecurso" FromRole="Funcionario" ToRole="AssociacaoRecurso" />
+          <NavigationProperty Name="GestorCC" Relationship="RecursosDB.CentroDeCustoFuncionario1" FromRole="Funcionario" ToRole="CentroDeCusto" />
+          <NavigationProperty Name="CentroDeCusto" Relationship="RecursosDB.FuncionarioCentroDeCusto" FromRole="Funcionario" ToRole="CentroDeCusto" />
+        </EntityType>
+        <EntityType Name="CentroDeCusto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="GestorUPI" Type="Int32" Nullable="true" />
+          <Property Name="CoordenadorUPI" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="CoordenadorCC" Relationship="RecursosDB.CentroDeCustoFuncionario" FromRole="CentroDeCusto" ToRole="Funcionario" />
+          <NavigationProperty Name="GestorCC" Relationship="RecursosDB.CentroDeCustoFuncionario1" FromRole="CentroDeCusto" ToRole="Funcionario" />
+          <NavigationProperty Name="Funcionario" Relationship="RecursosDB.FuncionarioCentroDeCusto" FromRole="CentroDeCusto" ToRole="Funcionario" />
+        </EntityType>
+        <Association Name="CentroDeCustoFuncionario">
+          <End Type="RecursosDB.CentroDeCusto" Role="CentroDeCusto" Multiplicity="*" />
+          <End Type="RecursosDB.Funcionario" Role="Funcionario" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Funcionario">
+              <PropertyRef Name="UPI" />
+            </Principal>
+            <Dependent Role="CentroDeCusto">
+              <PropertyRef Name="CoordenadorUPI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Recurso" Abstract="true">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="LocalSite" Relationship="RecursosDB.LocalSiteRecurso" FromRole="Recurso" ToRole="LocalSite" />
+          <NavigationProperty Name="AssociacaoRecurso" Relationship="RecursosDB.RecursoAssociacaoRecurso" FromRole="Recurso" ToRole="AssociacaoRecurso" />
+        </EntityType>
+        <EntityType Name="LocalSite">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Sigla" Type="String" Nullable="false" />
+          <Property Name="UF" Type="String" Nullable="false" MaxLength="2" FixedLength="true" />
+          <NavigationProperty Name="Funcionario" Relationship="RecursosDB.FuncionarioLocalSite" FromRole="LocalSite" ToRole="Funcionario" />
+          <NavigationProperty Name="Recurso" Relationship="RecursosDB.LocalSiteRecurso" FromRole="LocalSite" ToRole="Recurso" />
+        </EntityType>
+        <Association Name="FuncionarioLocalSite">
+          <End Type="RecursosDB.Funcionario" Role="Funcionario" Multiplicity="*" />
+          <End Type="RecursosDB.LocalSite" Role="LocalSite" Multiplicity="1" />
+        </Association>
+        <Association Name="LocalSiteRecurso">
+          <End Type="RecursosDB.LocalSite" Role="LocalSite" Multiplicity="1" />
+          <End Type="RecursosDB.Recurso" Role="Recurso" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Equipamento" Abstract="true" BaseType="RecursosDB.Recurso">
+          <Property Name="SerialNo" Type="String" annotation:StoreGeneratedPattern="None" ConcurrencyMode="None" Nullable="false" />
+          <Property Name="Patrimonio" Type="Double" Nullable="true" />
+          <Property Name="NotaFiscalNo" Type="Double" Nullable="true" />
+          <Property Name="DataFabricacao" Type="DateTime" Nullable="true" />
+          <Property Name="StatusEquipamentoId" Type="String" Nullable="true" />
+          <Property Name="Marca" Type="String" Nullable="false" />
+          <Property Name="Modelo" Type="String" Nullable="false" />
+          <NavigationProperty Name="StatusEquipamento" Relationship="RecursosDB.StatusEquipamentoEquipamento" FromRole="Equipamento" ToRole="StatusEquipamento" />
+          <NavigationProperty Name="Propriedade" Relationship="RecursosDB.EquipamentoPropriedade" FromRole="Equipamento" ToRole="Propriedade" />
+        </EntityType>
+        <EntityType Name="Computador" BaseType="RecursosDB.Equipamento">
+          <NavigationProperty Name="TipoComputador" Relationship="RecursosDB.ComputadorTipoComputador" FromRole="Computador" ToRole="TipoComputador" />
+        </EntityType>
+        <EntityType Name="StatusFuncionario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" Nullable="false" />
+          <NavigationProperty Name="Funcionario" Relationship="RecursosDB.StatusFuncionarioFuncionario" FromRole="StatusFuncionario" ToRole="Funcionario" />
+        </EntityType>
+        <Association Name="StatusFuncionarioFuncionario">
+          <End Type="RecursosDB.StatusFuncionario" Role="StatusFuncionario" Multiplicity="1" />
+          <End Type="RecursosDB.Funcionario" Role="Funcionario" Multiplicity="*" />
+        </Association>
+        <EntityType Name="AssociacaoRecurso">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Funcionario" Relationship="RecursosDB.FuncionarioAssociacaoRecurso" FromRole="AssociacaoRecurso" ToRole="Funcionario" />
+          <NavigationProperty Name="Recurso" Relationship="RecursosDB.RecursoAssociacaoRecurso" FromRole="AssociacaoRecurso" ToRole="Recurso" />
+          <Property Name="DataAssociacao" Type="DateTime" Nullable="false" />
+          <Property Name="DataLiberacao" Type="DateTime" Nullable="true" />
+          <Property Name="MotivoLiberacao" Type="String" Nullable="true" />
+          <Property Name="TermoResponsabilidade" Type="String" Nullable="true" />
+        </EntityType>
+        <Association Name="FuncionarioAssociacaoRecurso">
+          <End Type="RecursosDB.Funcionario" Role="Funcionario" Multiplicity="1" />
+          <End Type="RecursosDB.AssociacaoRecurso" Role="AssociacaoRecurso" Multiplicity="*" />
+        </Association>
+        <Association Name="RecursoAssociacaoRecurso">
+          <End Type="RecursosDB.Recurso" Role="Recurso" Multiplicity="1" />
+          <End Type="RecursosDB.AssociacaoRecurso" Role="AssociacaoRecurso" Multiplicity="*" />
+        </Association>
+        <EntityType Name="UsuarioVpn" BaseType="RecursosDB.Recurso">
+          <Property Name="Usuario" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StatusEquipamento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" Nullable="false" />
+          <NavigationProperty Name="Equipamento" Relationship="RecursosDB.StatusEquipamentoEquipamento" FromRole="StatusEquipamento" ToRole="Equipamento" />
+        </EntityType>
+        <Association Name="StatusEquipamentoEquipamento">
+          <End Type="RecursosDB.StatusEquipamento" Role="StatusEquipamento" Multiplicity="1" />
+          <End Type="RecursosDB.Equipamento" Role="Equipamento" Multiplicity="*" />
+        </Association>
+        <EntityType Name="TipoComputador">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" Nullable="false" />
+          <NavigationProperty Name="Computador" Relationship="RecursosDB.ComputadorTipoComputador" FromRole="TipoComputador" ToRole="Computador" />
+        </EntityType>
+        <Association Name="ComputadorTipoComputador">
+          <End Type="RecursosDB.Computador" Role="Computador" Multiplicity="*" />
+          <End Type="RecursosDB.TipoComputador" Role="TipoComputador" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Propriedade" Abstract="true">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <NavigationProperty Name="Equipamento" Relationship="RecursosDB.EquipamentoPropriedade" FromRole="Propriedade" ToRole="Equipamento" />
+        </EntityType>
+        <EntityType Name="Compra" BaseType="RecursosDB.Propriedade">
+          <Property Name="DataCompra" Type="DateTime" Nullable="true" />
+          <Property Name="PedidoSapNo" Type="String" Nullable="true" />
+          <Property Name="DataTerminoGarantia" Type="DateTime" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Leasing" BaseType="RecursosDB.Propriedade">
+          <Property Name="DataRecebimento" Type="DateTime" Nullable="true" />
+          <Property Name="ContratoNo" Type="String" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Comodato" BaseType="RecursosDB.Propriedade">
+          <Property Name="DataRecebimento" Type="DateTime" Nullable="true" />
+          <Property Name="ContratoNo" Type="String" Nullable="true" />
+          <Property Name="DataTerminoGarantia" Type="DateTime" Nullable="true" />
+        </EntityType>
+        <Association Name="EquipamentoPropriedade">
+          <End Type="RecursosDB.Equipamento" Role="Equipamento" Multiplicity="*" />
+          <End Type="RecursosDB.Propriedade" Role="Propriedade" Multiplicity="1" />
+        </Association>
+        <EntityType Name="AparelhoCelular" BaseType="RecursosDB.Equipamento">
+          <Property Name="IMEI1" Type="String" Nullable="false" />
+          <Property Name="IMEI2" Type="String" Nullable="true" />
+          <NavigationProperty Name="TipoAparelhoCelular" Relationship="RecursosDB.AparelhoCelularTipoAparelhoCelular" FromRole="AparelhoCelular" ToRole="TipoAparelhoCelular" />
+        </EntityType>
+        <EntityType Name="TipoAparelhoCelular">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" Nullable="false" />
+          <NavigationProperty Name="AparelhoCelular" Relationship="RecursosDB.AparelhoCelularTipoAparelhoCelular" FromRole="TipoAparelhoCelular" ToRole="AparelhoCelular" />
+        </EntityType>
+        <Association Name="AparelhoCelularTipoAparelhoCelular">
+          <End Type="RecursosDB.AparelhoCelular" Role="AparelhoCelular" Multiplicity="*" />
+          <End Type="RecursosDB.TipoAparelhoCelular" Role="TipoAparelhoCelular" Multiplicity="1" />
+        </Association>
+        <EntityType Name="LinhaMovel" BaseType="RecursosDB.Recurso">
+          <Property Name="LinhaNo" Type="String" Nullable="false" MaxLength="9" />
+          <Property Name="ChipId" Type="String" Nullable="true" />
+          <NavigationProperty Name="CodigosDDD" Relationship="RecursosDB.LinhaMovelCodigosDDD" FromRole="LinhaMovel" ToRole="CodigosDDD" />
+          <NavigationProperty Name="TipoLinha" Relationship="RecursosDB.TipoLinhaLinhaMovel" FromRole="LinhaMovel" ToRole="TipoLinha" />
+          <NavigationProperty Name="TipoPlanoMovel" Relationship="RecursosDB.TipoPlanoMovelLinhaMovel" FromRole="LinhaMovel" ToRole="TipoPlanoMovel" />
+        </EntityType>
+        <EntityType Name="CodigosDDD">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodigoDDD" Type="String" Nullable="false" MaxLength="2" FixedLength="true" />
+          <NavigationProperty Name="LinhaMovel" Relationship="RecursosDB.LinhaMovelCodigosDDD" FromRole="CodigosDDD" ToRole="LinhaMovel" />
+        </EntityType>
+        <EntityType Name="TipoLinha">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" Nullable="false" />
+          <NavigationProperty Name="LinhaMovel" Relationship="RecursosDB.TipoLinhaLinhaMovel" FromRole="TipoLinha" ToRole="LinhaMovel" />
+        </EntityType>
+        <EntityType Name="TipoPlanoMovel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" Nullable="false" />
+          <NavigationProperty Name="LinhaMovel" Relationship="RecursosDB.TipoPlanoMovelLinhaMovel" FromRole="TipoPlanoMovel" ToRole="LinhaMovel" />
+        </EntityType>
+        <Association Name="LinhaMovelCodigosDDD">
+          <End Type="RecursosDB.LinhaMovel" Role="LinhaMovel" Multiplicity="*" />
+          <End Type="RecursosDB.CodigosDDD" Role="CodigosDDD" Multiplicity="1" />
+        </Association>
+        <Association Name="TipoLinhaLinhaMovel">
+          <End Type="RecursosDB.TipoLinha" Role="TipoLinha" Multiplicity="1" />
+          <End Type="RecursosDB.LinhaMovel" Role="LinhaMovel" Multiplicity="*" />
+        </Association>
+        <Association Name="TipoPlanoMovelLinhaMovel">
+          <End Type="RecursosDB.TipoPlanoMovel" Role="TipoPlanoMovel" Multiplicity="1" />
+          <End Type="RecursosDB.LinhaMovel" Role="LinhaMovel" Multiplicity="*" />
+        </Association>
+        <Association Name="CentroDeCustoFuncionario1">
+          <End Type="RecursosDB.CentroDeCusto" Role="CentroDeCusto" Multiplicity="*" />
+          <End Type="RecursosDB.Funcionario" Role="Funcionario" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Funcionario">
+              <PropertyRef Name="UPI" />
+            </Principal>
+            <Dependent Role="CentroDeCusto">
+              <PropertyRef Name="GestorUPI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FuncionarioCentroDeCusto">
+          <End Type="RecursosDB.Funcionario" Role="Funcionario" Multiplicity="*" />
+          <End Type="RecursosDB.CentroDeCusto" Role="CentroDeCusto" Multiplicity="1" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RecursosDBStoreContainer" CdmEntityContainer="RecursosDBContainer">
+    <EntitySetMapping Name="FuncionarioSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RecursosDB.Funcionario)">
+        <MappingFragment StoreEntitySet="FuncionarioSet">
+          <ScalarProperty Name="UPI" ColumnName="UPI" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Sobrenome" ColumnName="Sobrenome" />
+          <ScalarProperty Name="UsuarioGad" ColumnName="UsuarioGad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CentroDeCustoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RecursosDB.CentroDeCusto)">
+        <MappingFragment StoreEntitySet="CentroDeCustoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="GestorUPI" ColumnName="GestorUPI" />
+          <ScalarProperty Name="CoordenadorUPI" ColumnName="CoordenadorUPI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecursoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RecursosDB.Recurso)">
+        <MappingFragment StoreEntitySet="RecursoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(RecursosDB.Equipamento)">
+        <MappingFragment StoreEntitySet="RecursoSet_Equipamento">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="Patrimonio" ColumnName="Patrimonio" />
+          <ScalarProperty Name="NotaFiscalNo" ColumnName="NotaFiscalNo" />
+          <ScalarProperty Name="DataFabricacao" ColumnName="DataFabricacao" />
+          <ScalarProperty Name="StatusEquipamentoId" ColumnName="StatusEquipamentoId" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(RecursosDB.Computador)">
+        <MappingFragment StoreEntitySet="RecursoSet_Computador">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(RecursosDB.AparelhoCelular)">
+        <MappingFragment StoreEntitySet="RecursoSet_AparelhoCelular">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IMEI1" ColumnName="IMEI1" />
+          <ScalarProperty Name="IMEI2" ColumnName="IMEI2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(RecursosDB.LinhaMovel)">
+        <MappingFragment StoreEntitySet="RecursoSet_LinhaMovel">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LinhaNo" ColumnName="LinhaNo" />
+          <ScalarProperty Name="ChipId" ColumnName="ChipId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(RecursosDB.UsuarioVpn)">
+        <MappingFragment StoreEntitySet="RecursoSet_UsuarioVpn">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocalSiteSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RecursosDB.LocalSite)">
+        <MappingFragment StoreEntitySet="LocalSiteSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Sigla" ColumnName="Sigla" />
+          <ScalarProperty Name="UF" ColumnName="UF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusFuncionarioSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RecursosDB.StatusFuncionario)">
+        <MappingFragment StoreEntitySet="StatusFuncionarioSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssociacaoRecursoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RecursosDB.AssociacaoRecurso)">
+        <MappingFragment StoreEntitySet="AssociacaoRecursoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DataAssociacao" ColumnName="DataAssociacao" />
+          <ScalarProperty Name="DataLiberacao" ColumnName="DataLiberacao" />
+          <ScalarProperty Name="MotivoLiberacao" ColumnName="MotivoLiberacao" />
+          <ScalarProperty Name="TermoResponsabilidade" ColumnName="TermoResponsabilidade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusEquipamentoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RecursosDB.StatusEquipamento)">
+        <MappingFragment StoreEntitySet="StatusEquipamentoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoComputadorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RecursosDB.TipoComputador)">
+        <MappingFragment StoreEntitySet="TipoComputadorSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropriedadeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RecursosDB.Propriedade)">
+        <MappingFragment StoreEntitySet="PropriedadeSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(RecursosDB.Compra)">
+        <MappingFragment StoreEntitySet="PropriedadeSet_Compra">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DataCompra" ColumnName="DataCompra" />
+          <ScalarProperty Name="PedidoSapNo" ColumnName="PedidoSapNo" />
+          <ScalarProperty Name="DataTerminoGarantia" ColumnName="DataTerminoGarantia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(RecursosDB.Leasing)">
+        <MappingFragment StoreEntitySet="PropriedadeSet_Leasing">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DataRecebimento" ColumnName="DataRecebimento" />
+          <ScalarProperty Name="ContratoNo" ColumnName="ContratoNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(RecursosDB.Comodato)">
+        <MappingFragment StoreEntitySet="PropriedadeSet_Comodato">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DataRecebimento" ColumnName="DataRecebimento" />
+          <ScalarProperty Name="ContratoNo" ColumnName="ContratoNo" />
+          <ScalarProperty Name="DataTerminoGarantia" ColumnName="DataTerminoGarantia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoAparelhoCelularSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RecursosDB.TipoAparelhoCelular)">
+        <MappingFragment StoreEntitySet="TipoAparelhoCelularSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CodigosDDDSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RecursosDB.CodigosDDD)">
+        <MappingFragment StoreEntitySet="CodigosDDDSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CodigoDDD" ColumnName="CodigoDDD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoLinhaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RecursosDB.TipoLinha)">
+        <MappingFragment StoreEntitySet="TipoLinhaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoPlanoMovelSet">
+      <EntityTypeMapping TypeName="IsTypeOf(RecursosDB.TipoPlanoMovel)">
+        <MappingFragment StoreEntitySet="TipoPlanoMovelSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FuncionarioLocalSite" TypeName="RecursosDB.FuncionarioLocalSite" StoreEntitySet="FuncionarioSet">
+      <EndProperty Name="LocalSite">
+        <ScalarProperty Name="Id" ColumnName="LocalSite_Id" />
+      </EndProperty>
+      <EndProperty Name="Funcionario">
+        <ScalarProperty Name="UPI" ColumnName="UPI" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="LocalSiteRecurso" TypeName="RecursosDB.LocalSiteRecurso" StoreEntitySet="RecursoSet">
+      <EndProperty Name="LocalSite">
+        <ScalarProperty Name="Id" ColumnName="LocalSite_Id" />
+      </EndProperty>
+      <EndProperty Name="Recurso">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="StatusFuncionarioFuncionario" TypeName="RecursosDB.StatusFuncionarioFuncionario" StoreEntitySet="FuncionarioSet">
+      <EndProperty Name="StatusFuncionario">
+        <ScalarProperty Name="Id" ColumnName="StatusFuncionario_Id" />
+      </EndProperty>
+      <EndProperty Name="Funcionario">
+        <ScalarProperty Name="UPI" ColumnName="UPI" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FuncionarioAssociacaoRecurso" TypeName="RecursosDB.FuncionarioAssociacaoRecurso" StoreEntitySet="AssociacaoRecursoSet">
+      <EndProperty Name="Funcionario">
+        <ScalarProperty Name="UPI" ColumnName="Funcionario_UPI" />
+      </EndProperty>
+      <EndProperty Name="AssociacaoRecurso">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RecursoAssociacaoRecurso" TypeName="RecursosDB.RecursoAssociacaoRecurso" StoreEntitySet="AssociacaoRecursoSet">
+      <EndProperty Name="Recurso">
+        <ScalarProperty Name="Id" ColumnName="Recurso_Id" />
+      </EndProperty>
+      <EndProperty Name="AssociacaoRecurso">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="StatusEquipamentoEquipamento" TypeName="RecursosDB.StatusEquipamentoEquipamento" StoreEntitySet="RecursoSet_Equipamento">
+      <EndProperty Name="StatusEquipamento">
+        <ScalarProperty Name="Id" ColumnName="StatusEquipamento_Id" />
+      </EndProperty>
+      <EndProperty Name="Equipamento">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ComputadorTipoComputador" TypeName="RecursosDB.ComputadorTipoComputador" StoreEntitySet="RecursoSet_Computador">
+      <EndProperty Name="TipoComputador">
+        <ScalarProperty Name="Id" ColumnName="TipoComputador_Id" />
+      </EndProperty>
+      <EndProperty Name="Computador">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EquipamentoPropriedade" TypeName="RecursosDB.EquipamentoPropriedade" StoreEntitySet="RecursoSet_Equipamento">
+      <EndProperty Name="Propriedade">
+        <ScalarProperty Name="Id" ColumnName="Propriedade_Id" />
+      </EndProperty>
+      <EndProperty Name="Equipamento">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AparelhoCelularTipoAparelhoCelular" TypeName="RecursosDB.AparelhoCelularTipoAparelhoCelular" StoreEntitySet="RecursoSet_AparelhoCelular">
+      <EndProperty Name="TipoAparelhoCelular">
+        <ScalarProperty Name="Id" ColumnName="TipoAparelhoCelular_Id" />
+      </EndProperty>
+      <EndProperty Name="AparelhoCelular">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="LinhaMovelCodigosDDD" TypeName="RecursosDB.LinhaMovelCodigosDDD" StoreEntitySet="RecursoSet_LinhaMovel">
+      <EndProperty Name="CodigosDDD">
+        <ScalarProperty Name="Id" ColumnName="CodigosDDD_Id" />
+      </EndProperty>
+      <EndProperty Name="LinhaMovel">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TipoLinhaLinhaMovel" TypeName="RecursosDB.TipoLinhaLinhaMovel" StoreEntitySet="RecursoSet_LinhaMovel">
+      <EndProperty Name="TipoLinha">
+        <ScalarProperty Name="Id" ColumnName="TipoLinha_Id" />
+      </EndProperty>
+      <EndProperty Name="LinhaMovel">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TipoPlanoMovelLinhaMovel" TypeName="RecursosDB.TipoPlanoMovelLinhaMovel" StoreEntitySet="RecursoSet_LinhaMovel">
+      <EndProperty Name="TipoPlanoMovel">
+        <ScalarProperty Name="Id" ColumnName="TipoPlanoMovel_Id" />
+      </EndProperty>
+      <EndProperty Name="LinhaMovel">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FuncionarioCentroDeCusto" TypeName="RecursosDB.FuncionarioCentroDeCusto" StoreEntitySet="FuncionarioSet">
+      <EndProperty Name="CentroDeCusto">
+        <ScalarProperty Name="Id" ColumnName="CentroDeCusto_Id" />
+      </EndProperty>
+      <EndProperty Name="Funcionario">
+        <ScalarProperty Name="UPI" ColumnName="UPI" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

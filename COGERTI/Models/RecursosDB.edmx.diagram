@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b4dce064926b48db91d2b8bab04806b1" Name="Diagram1" >
+        <EntityTypeShape EntityType="RecursosDB.Funcionario" Width="1.5" PointX="3.125" PointY="0.625" />
+        <EntityTypeShape EntityType="RecursosDB.CentroDeCusto" Width="1.5" PointX="5.5" PointY="0.5" />
+        <AssociationConnector Association="RecursosDB.CentroDeCustoFuncionario" />
+        <EntityTypeShape EntityType="RecursosDB.Recurso" Width="1.5" PointX="3.125" PointY="4.75" />
+        <EntityTypeShape EntityType="RecursosDB.LocalSite" Width="1.5" PointX="0.5" PointY="3" />
+        <AssociationConnector Association="RecursosDB.FuncionarioLocalSite" />
+        <AssociationConnector Association="RecursosDB.LocalSiteRecurso" />
+        <EntityTypeShape EntityType="RecursosDB.Equipamento" Width="1.5" PointX="5.5" PointY="6" />
+        <InheritanceConnector EntityType="RecursosDB.Equipamento" />
+        <EntityTypeShape EntityType="RecursosDB.Computador" Width="1.5" PointX="7.375" PointY="7.125" />
+        <InheritanceConnector EntityType="RecursosDB.Computador" />
+        <EntityTypeShape EntityType="RecursosDB.StatusFuncionario" Width="1.5" PointX="1" PointY="0.75" />
+        <AssociationConnector Association="RecursosDB.StatusFuncionarioFuncionario" />
+        <EntityTypeShape EntityType="RecursosDB.AssociacaoRecurso" Width="1.5" PointX="5.625" PointY="3.125" />
+        <AssociationConnector Association="RecursosDB.FuncionarioAssociacaoRecurso" />
+        <AssociationConnector Association="RecursosDB.RecursoAssociacaoRecurso" />
+        <EntityTypeShape EntityType="RecursosDB.UsuarioVpn" Width="1.5" PointX="0.875" PointY="5.5" />
+        <InheritanceConnector EntityType="RecursosDB.UsuarioVpn" />
+        <EntityTypeShape EntityType="RecursosDB.StatusEquipamento" Width="1.5" PointX="7.75" PointY="4.25" />
+        <AssociationConnector Association="RecursosDB.StatusEquipamentoEquipamento" />
+        <EntityTypeShape EntityType="RecursosDB.TipoComputador" Width="1.5" PointX="9.5" PointY="7.125" />
+        <AssociationConnector Association="RecursosDB.ComputadorTipoComputador" />
+        <EntityTypeShape EntityType="RecursosDB.Propriedade" Width="1.5" PointX="10.25" PointY="4.25" />
+        <EntityTypeShape EntityType="RecursosDB.Compra" Width="1.5" PointX="8.5" PointY="1.875" />
+        <InheritanceConnector EntityType="RecursosDB.Compra" />
+        <EntityTypeShape EntityType="RecursosDB.Leasing" Width="1.5" PointX="10.5" PointY="2.125" />
+        <InheritanceConnector EntityType="RecursosDB.Leasing" />
+        <EntityTypeShape EntityType="RecursosDB.Comodato" Width="1.5" PointX="12.25" PointY="3.625" />
+        <InheritanceConnector EntityType="RecursosDB.Comodato" />
+        <AssociationConnector Association="RecursosDB.EquipamentoPropriedade" ManuallyRouted="true" >
+          <ConnectorPoint PointX="7" PointY="6.4728955351583553" />
+          <ConnectorPoint PointX="11" PointY="6.4728955351583553" />
+          <ConnectorPoint PointX="11" PointY="5.84568359375" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="RecursosDB.AparelhoCelular" Width="1.5" PointX="5.5" PointY="9.25" />
+        <InheritanceConnector EntityType="RecursosDB.AparelhoCelular" />
+        <EntityTypeShape EntityType="RecursosDB.TipoAparelhoCelular" Width="1.5" PointX="7.75" PointY="9.25" />
+        <AssociationConnector Association="RecursosDB.AparelhoCelularTipoAparelhoCelular" />
+        <EntityTypeShape EntityType="RecursosDB.LinhaMovel" Width="1.5" PointX="3.125" PointY="7.25" />
+        <EntityTypeShape EntityType="RecursosDB.CodigosDDD" Width="1.5" PointX="0.875" PointY="7.625" />
+        <EntityTypeShape EntityType="RecursosDB.TipoLinha" Width="1.5" PointX="1.125" PointY="10" />
+        <EntityTypeShape EntityType="RecursosDB.TipoPlanoMovel" Width="1.5" PointX="3.5" PointY="10" />
+        <AssociationConnector Association="RecursosDB.LinhaMovelCodigosDDD" />
+        <AssociationConnector Association="RecursosDB.TipoLinhaLinhaMovel" />
+        <AssociationConnector Association="RecursosDB.TipoPlanoMovelLinhaMovel" />
+        <InheritanceConnector EntityType="RecursosDB.LinhaMovel" />
+        <AssociationConnector Association="RecursosDB.CentroDeCustoFuncionario1" />
+        <AssociationConnector Association="RecursosDB.FuncionarioCentroDeCusto" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
